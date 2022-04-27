@@ -1,5 +1,6 @@
 numpy
 layer-sdk
 streamlit
+keras
 tensorflow-cpu==2.6
 pillow
