@@ -2,7 +2,6 @@ import streamlit as st
 from PIL import Image
 import matplotlib.pyplot as plt
 import layer
-from tensorflow.keras.preprocessing import image
 import numpy as np
 import tensorflow as tf
 
@@ -26,7 +25,7 @@ def main():
 def predict(food_image):
     model = layer.get_model('layer/image-classification/models/food-vision').get_train()
     test_image = food_image.resize((200, 200))
-    test_image = image.img_to_array(test_image)
+    test_image = tf.keras.preprocessing.image.array_to_img(test_image)
     test_image = test_image / 255.0
     test_image = np.expand_dims(test_image, axis=0)
     class_names = ['chicken_curry', 'oysters', 'tuna_tartare', 'pho', 'fried_rice', 'hot_and_sour_soup',
