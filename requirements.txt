@@ -1,6 +1,5 @@
 numpy
 layer-sdk
 streamlit
-tensorflow==2.6
+tensorflow-cpu==2.6
 pillow
-matplotlib==3.3.4
