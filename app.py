@@ -48,24 +48,6 @@ def predict(image):
     predictions = model.predict(test_image)
     scores = tf.nn.softmax(predictions[0])
     scores = scores.numpy()
-    results = {
-        'Tomato Healthy': 0,
-        'Tomato Septoria Leaf Spot': 0,
-        'Tomato Bacterial Spot': 0,
-        'Tomato Blight': 0,
-        'Cabbage Healthy': 0,
-        'Tomato Spider Mite': 0,
-        'Tomato Leaf Mold': 0,
-        'Tomato_Yellow Leaf Curl Virus': 0,
-        'Soy_Frogeye_Leaf_Spot': 0,
-        'Soy_Downy_Mildew': 0,
-        'Maize_Ravi_Corn_Rust': 0,
-        'Maize_Healthy': 0,
-        'Maize_Grey_Leaf_Spot': 0,
-        'Maize_Lethal_Necrosis': 0,
-        'Soy_Healthy': 0,
-        'Cabbage Black Rot': 0
-    }
     result = f"{class_names[np.argmax(scores)]} with a {(100 * np.max(scores)).round(2)} percent confidence."
     return result
 
