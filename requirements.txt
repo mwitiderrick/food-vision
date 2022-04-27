@@ -1,4 +1,5 @@
 numpy
+layer-sdk
 streamlit
 tensorflow==2.6
 pillow
